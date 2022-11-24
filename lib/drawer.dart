@@ -3,6 +3,8 @@ import 'package:counter_7/main.dart';
 import 'package:counter_7/budget.dart';
 import 'package:counter_7/form.dart';
 import 'package:counter_7/budget_data.dart';
+import 'package:counter_7/pages/mywatchlist.dart';
+
 
 class DrawerApp extends StatelessWidget {
   const DrawerApp(
@@ -49,6 +51,18 @@ class DrawerApp extends StatelessWidget {
                           transactions: transactions,
                         )),
               );
+            },
+          ),
+          ListTile(
+            title: const Text('Watchlist'),
+            onTap: () {
+              Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => WatchlistPage(
+                            saveTransaction: saveTransaction,
+                            transactions: transactions,
+                          )));
             },
           ),
         ],

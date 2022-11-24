@@ -60,7 +60,29 @@ Navigator pada dasarnya menyimpan stack route (pages). Dimana route tersebut mer
 1. Membuat `form.dart` , `drawer.dart`, `budget_data.dart`, dan `budget.dart`
 2. Membuat `form.dart` yang berisikan FormFields yang diperlukan oleh pengguna untuk memasukkan input
 3. Memindahkan drawer ke dalam satu file sendiri `drawer.dart` yang berisikan widget `Drawer` yang memiliki child berupa `ListTile` yang berfungsi ketika diklik akan memindahkan pages saat ini ke pages lain.
-4. Membuat `budget.dart`, berisikan data budget yang sudah disimpan
-5. `budget_data.dart` berisikan suatu class yang menandakan class pada pengisian budget
-6. Melakukan `add`, `commit`, dan `push` ke GitHub.
+4. Menampilkan data budget yang ada pada `budget_data.dart` di `budget.dart` 
+5. Melakukan `add`, `commit`, dan `push` ke GitHub.
 
+# Tugas 9 PBP
+Shafanisa Alifia - 2106634723
+
+## Apakah bisa kita melakukan pengambilan data JSON tanpa membuat model terlebih dahulu? apakah hal tersebut lebih baik daripada membuat model sebelum melakukan pengambilan data JSON?
+Pembuatan model dapat membuat pengambilan data JSON menjadi lebih terstruktur oleh karena itu, kita tetap dapat melakukan pengambilan data tanpa menggunakan model namun hal ini tidak lebih baik daripada membuat model sebelum melakukan pengambilan data JSON karena ketika kita ingin mengakses data untuk tiap field yang menjadi properti dari class model tersebut kita cukup hanya mengakses properti dari class model tersebut saja.
+
+## Widget yang digunakan
+- `Expanded` : Widget yang digunakan untuk memperluas children widget dari Row, Column, atau Flex sehingga child dapat mengisi tempat kosong yang tersedia.
+- `Checkbox` : Widget yang digunakan untuk menampilkan input field berupa checkbox.
+- `FutureBuilder` : Widget untuk melakukan update child berdasarkan snapshot terbaru dari Future.
+- `ListView` : Widget untuk menampilkan widget-widget lain yang menjadi children-nya.
+
+## Mekanisme pengambilan data dari json hingga dapat ditampilkan pada Flutter.
+Pertama kita cukup meneruskan url ke API menggunakan library http, lalu flutter akan melakukan HTTP request ke server. Setelah respons diterima, kita akan mendapatkan objek JSON dalam bentuk string. Untuk benar-benar memproses string, kita perlu mengubahnya kembali menjadi format JSON, yang dapat kita lakukan menggunakan fungsi json.decode(). Hasil dari jsonDecode ini lalu digunakan untuk menginisialisasi model yang telah dibuat dan kita dapat mengakses setiap value key dari objek JSON tersebut.
+
+## Implementasi checklist di atas
+1. Menambahkan pages baru dengan cara tambahkan `ListTile` baru ke dalam drawer widget.
+2. Membuat model `WatchList` di `models/watchlist.dart` yang digenerate dari response JSON endpoint.
+3. Mengambil data dari https://tugas2-alip.herokuapp.com/mywatchlist/json/ untuk `mywatchlist.dart`, yang berisikan data pada Tugas 3. 
+4. Menambahkan dependency http untuk melakukan fetch data.
+5. Membuat function fetcher ke endpoint JSON `models/fetcher.dart`.
+6. Membuat page detail baru di `pages/detail_watchlist.dart`.
+7. Melakukan `add`, `commit`, dan `push` ke GitHub.
