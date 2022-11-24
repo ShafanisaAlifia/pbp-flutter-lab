@@ -76,7 +76,7 @@ Pembuatan model dapat membuat pengambilan data JSON menjadi lebih terstruktur ol
 - `ListView` : Widget untuk menampilkan widget-widget lain yang menjadi children-nya.
 
 ## Mekanisme pengambilan data dari json hingga dapat ditampilkan pada Flutter.
-Pertama kita cukup meneruskan url ke API menggunakan library http, lalu flutter akan melakukan HTTP request ke server. Setelah respons diterima, kita akan mendapatkan objek JSON dalam bentuk string. Untuk benar-benar memproses string, kita perlu mengubahnya kembali menjadi format JSON, yang dapat kita lakukan menggunakan fungsi json.decode(). Hasil dari jsonDecode ini lalu digunakan untuk menginisialisasi model yang telah dibuat dan kita dapat mengakses setiap value key dari objek JSON tersebut.
+Pertama kita cukup meneruskan url ke API menggunakan library http, lalu flutter akan melakukan HTTP request ke server. Setelah respons diterima, kita akan mendapatkan objek JSON dalam bentuk string. Untuk benar-benar memproses string, kita perlu mengubahnya kembali menjadi format JSON, yang dapat kita lakukan menggunakan fungsi `json.decode()`. Hasil dari jsonDecode ini lalu digunakan untuk menginisialisasi model yang telah dibuat dan kita dapat mengakses setiap value key dari objek JSON tersebut.
 
 ## Implementasi checklist di atas
 1. Menambahkan pages baru dengan cara tambahkan `ListTile` baru ke dalam drawer widget.
